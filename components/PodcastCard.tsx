@@ -6,6 +6,7 @@ import React from "react";
 const PodcastCard = ({
   // imgUrl is for convex backend data
   imgUrl,
+
   title,
   // imgURL is for local json data
   imgURL,

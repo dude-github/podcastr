@@ -106,11 +106,12 @@ export interface AudioContextType {
 }
 
 export interface PodcastCardProps {
-  imgUrl: string;
-  imgURL: string;
+  imgUrl: any;
+  imgURL: any;
   title: string;
   description: string;
-  podcastId: Id<"podcasts">;
+  // podcastId: Id<"podcasts">;
+  podcastId: number;
 }
 
 export interface CarouselProps {

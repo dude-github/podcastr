@@ -17,27 +17,28 @@ const Home = () => {
           {podcastData.map(({ id, title, description, imgURL }) => (
             <PodcastCard
               key={id}
-              imgURL={imgURL}
+              imgURL={imgURL!}
               title={title}
               description={description}
               podcastId={id}
+              imgUrl={""}
             />
           ))}
         </div>
 
-        <div className="podcast_grid">
+        {/* <div className="podcast_grid">
           {trendingPodcasts?.map(
             ({ _id, podcastTitle, podcastDescription, imageUrl }) => (
               <PodcastCard
                 key={_id}
-                imgURL={imageUrl}
+                imgURL={imageUrl!}
                 title={podcastTitle}
                 description={podcastDescription}
                 podcastId={_id}
               />
             )
           )}
-        </div>
+        </div> */}
       </section>
     </div>
   );
