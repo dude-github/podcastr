@@ -11,6 +11,7 @@ import { api } from "@/convex/_generated/api";
 import { podcastData } from "@/constants";
 import { useRouter } from "next/navigation";
 import LoaderSpinner from "./LoaderSpinner";
+import { cn } from "@/lib/utils";
 
 const RightSidebar = () => {
   const { user } = useUser();
@@ -20,7 +21,11 @@ const RightSidebar = () => {
   if (!podcastData) return <LoaderSpinner />;
 
   return (
-    <section className="right_sidebar text-white-1">
+    <section
+      className={cn("right_sidebar text-white-1 h-[calc(100vh-5px)]", {
+        // "h-[calc(100vh-140px)]": audio?.audioUrl,
+      })}
+    >
       <SignedIn>
         <Link className="flex gap-3 pb-12" href={`/profile/${user?.id}`}>
           <UserButton />
@@ -40,6 +45,7 @@ const RightSidebar = () => {
 
       <section>
         <Header headerTitle="Fans Like You" />
+        <br />
         <Carousel fansLikeDetail={topPodcasters!} />
       </section>
 

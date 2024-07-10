@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
-import ConvexClerkProvider from "./providers/ConvexClerkProvider";
+import ConvexClerkProvider from "../providers/ConvexClerkProvider";
 import AudioProvider from "@/providers/AudioProvider";
 
-const poppins = Poppins({ subsets: ["latin"], weight: "400" });
+const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Podcastr",
@@ -23,7 +23,7 @@ export default function RootLayout({
     <ConvexClerkProvider>
       <html lang="en">
         <AudioProvider>
-          <body className={poppins.className}>{children}</body>
+          <body className={`${manrope.className}`}>{children}</body>
         </AudioProvider>
       </html>
     </ConvexClerkProvider>
